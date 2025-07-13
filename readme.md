@@ -19,10 +19,33 @@ conda activate PNPL
 pip install -r requirements.txt
 ```
 
-:two:新建model_cache文件夹并将[clip的模型](https://huggingface.co/laion/CLIP-ViT-B-16-laion2B-s34B-b88K)下载至此
+:two:新建model_cache文件夹并将[clip的模型](https://huggingface.co/laion/CLIP-ViT-B-16-laion2B-s34B-b88K)下载至此，并命名为open_clip_pytorch_model.bin
 
 :three:按照data文件夹中每个数据集的train和test的csv文件划分数据集，你可以直接下载[已经划分好的数据](https://pan.baidu.com/s/1KhOG-GULKrugVTSmGYDnOg?pwd=6666)并将其放置在对应的数据集文件夹下
 
+```text
+PNPL/
+├── data/
+│   ├── UCM/
+│   │   ├── one_class_train/
+│   │   ├── one_class_test/
+│   │   ├── p1_test.csv
+│   │   ├── p1_train.csv
+│   │   ├── p2_test.csv
+│   │   ├── p2_train.csv
+│   │   ├── p3_test.csv
+│   │   ├── p3_train.csv
+│   │   ├── ucm_class_index_unknown3.json
+│   │   ├── ucm_class_index_unknown5.json
+│   │   ├── ucm_class_index_unknown9.json
+│   │   ├── ucm_unknown3_class_clean.npy
+│   │   ├── ucm_unknown5_class_clean.npy
+│   │   ├── ucm_unknown9_class_clean.npy
+│   │   └── ucm.txt
+│   ├── AID/
+│   └── NWPU/
+└── ... 
+```
 对每个数据集的划分说明如下：
 
 | dataset | unknown class num | unknown classes                                              |
@@ -90,9 +113,33 @@ conda activate PNPL
 pip install -r requirements.txt
 ```
 
-:two: Create a model_cache folder and download the [CLIP model](https://huggingface.co/laion/CLIP-ViT-B-16-laion2B-s34B-b88K) into it
+:two: Create a model_cache folder and download the [CLIP model](https://huggingface.co/laion/CLIP-ViT-B-16-laion2B-s34B-b88K) into it and named it open_clip_pytorch_model.bin
 
 :three: Prepare datasets according to the train/test CSV files in the data folder for each dataset. You can directly download [pre-split data](https://pan.baidu.com/s/1KhOG-GULKrugVTSmGYDnOg?pwd=6666) and place it in the corresponding dataset folder.
+
+```text
+PNPL/
+├── data/
+│   ├── UCM/
+│   │   ├── one_class_train/
+│   │   ├── one_class_test/
+│   │   ├── p1_test.csv
+│   │   ├── p1_train.csv
+│   │   ├── p2_test.csv
+│   │   ├── p2_train.csv
+│   │   ├── p3_test.csv
+│   │   ├── p3_train.csv
+│   │   ├── ucm_class_index_unknown3.json
+│   │   ├── ucm_class_index_unknown5.json
+│   │   ├── ucm_class_index_unknown9.json
+│   │   ├── ucm_unknown3_class_clean.npy
+│   │   ├── ucm_unknown5_class_clean.npy
+│   │   ├── ucm_unknown9_class_clean.npy
+│   │   └── ucm.txt
+│   ├── AID/
+│   └── NWPU/
+└── ... 
+```
 
 Dataset splits are as follows:
 
