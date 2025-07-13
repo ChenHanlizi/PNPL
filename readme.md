@@ -3,7 +3,7 @@
 
 ## 介绍
 
-本项目是:page_with_curl:Learning Positive-Negative Prompts for Open-Set Remote Sensing Scene Classification的实现，如果您喜欢我们的项目，请点一下star:star:吧！
+本项目是 :page_with_curl: Learning Positive-Negative Prompts for Open-Set Remote Sensing Scene Classification的实现，如果您喜欢我们的项目，请点一下star :star: 吧！
 
 ![framework](./framework.png)
 
@@ -65,7 +65,7 @@ pip install -r requirements.txt
 
 
 
-我们的代码参考了https://github.com/mala-lab/NegPrompt，感谢他们出色的工作。
+我们的代码参考了https://github.com/mala-lab/NegPrompt, 感谢他们出色的工作。
 
 </details>
 
