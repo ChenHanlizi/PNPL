@@ -5,7 +5,7 @@
 
 本项目是:page_with_curl:Learning Positive-Negative Prompts for Open-Set Remote Sensing Scene Classification的实现，如果您喜欢我们的项目，请点一下star:star:吧！
 
-![75239387479](C:\Users\ADMINI~1\AppData\Local\Temp\1752393874794.png)
+![framework](./framework.png)
 
 ------
 
@@ -74,7 +74,7 @@
 
 This project implements :page_with_curl: Learning Positive-Negative Prompts for Open-Set Remote Sensing Scene Classification. If you like our project, please give us a star:star:!
 
-![75239387479](C:\Users\ADMINI~1\AppData\Local\Temp\1752393874794.png)
+![framework](./framework.png)
 
 ------
 
