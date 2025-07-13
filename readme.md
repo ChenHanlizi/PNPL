@@ -13,9 +13,11 @@
 
 :one:按照如下步骤安装本项目运行所需要的环境
 
-`conda create -n NegPrompt python=3.8`
-`conda activate NegPrompt`
-`pip install -r requirements.txt`
+```
+conda create -n PNPL python=3.8
+conda activate PNPL
+pip install -r requirements.txt
+```
 
 :two:新建model_cache文件夹并将[clip的模型](https://huggingface.co/laion/CLIP-ViT-B-16-laion2B-s34B-b88K)下载至此
 
@@ -82,9 +84,11 @@ This project implements :page_with_curl: Learning Positive-Negative Prompts for 
 
 :one: Set up the required environment with the following commands:
 
-`conda create -n NegPrompt python=3.8`
-`conda activate NegPrompt`
-`pip install -r requirements.txt`
+```
+conda create -n PNPL python=3.8
+conda activate PNPL
+pip install -r requirements.txt
+```
 
 :two: Create a model_cache folder and download the [CLIP model](https://huggingface.co/laion/CLIP-ViT-B-16-laion2B-s34B-b88K) into it
 
