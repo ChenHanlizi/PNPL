@@ -423,137 +423,6 @@ class ImageNetDataset_mask(Dataset):
         self.data = self.data[self.labels == -2]
         self.labels = self.labels[self.labels == -2]
 
-
-##############
-# 这一段目前是随机将一些patch给mask掉
-# class ImageNetDataset(Dataset):
-#     def __init__(self, data, labels, transform=None):
-#         self.data = data
-#         self.labels = labels
-#         self.transform = transform
-
-#     def __getitem__(self, index):
-#         if torch.is_tensor(index):
-#             index = index.tolist()
-#         jpeg_path = self.data[index]
-#         labels = self.labels[index]
-#         image = Image.open(jpeg_path).convert('RGB')
-    
-#         if self.transform is not None:
-#             image = self.transform(image)
-        
-#         # Assuming image shape is [3, 224, 224]
-#         image = self.apply_random_mask(image)
-#         labels = torch.as_tensor(int(labels), dtype=torch.int64)
-#         return image, labels
-
-#     def apply_random_mask(self, image):
-#         patch_size = 16
-#         num_patches = 14
-#         mask_ratio = 0.5
-
-#         image_np = image.numpy().transpose(1, 2, 0)  # Convert to numpy array and transpose to [224, 224, 3]
-#         height, width, channels = image_np.shape
-
-#         # Ensure image dimensions are compatible with patch size
-#         assert height == patch_size * num_patches and width == patch_size * num_patches, "Image size is not 224x224"
-
-#         total_patches = num_patches * num_patches
-#         num_masked_patches = int(total_patches * mask_ratio)
-#         all_patches = [(i, j) for i in range(num_patches) for j in range(num_patches)]
-#         masked_patches = random.sample(all_patches, num_masked_patches)
-
-#         for (i, j) in masked_patches:
-#             y_start = i * patch_size
-#             y_end = y_start + patch_size
-#             x_start = j * patch_size
-#             x_end = x_start + patch_size
-#             image_np[y_start:y_end, x_start:x_end, :] = 0  # Set patch to black (all zeros)
-        
-#         image_np = image_np.transpose(2, 0, 1)  # Convert back to [3, 224, 224]
-#         return torch.tensor(image_np)
-
-#     def remove_negative_label(self):
-#         mask = self.labels > -1
-#         self.data = [self.data[i] for i in range(len(mask)) if mask[i]]
-#         self.labels = self.labels[mask]
-
-#     def remain_negative_label(self):
-#         mask = self.labels == -2
-#         self.data = [self.data[i] for i in range(len(mask)) if mask[i]]
-#         self.labels = self.labels[mask]
-
-#     def __len__(self):
-#         return len(self.data)
-#########################################################
-############################################################
-# 这一段和上面不同的是不是通过像素选patch
-# class ImageNetDataset(Dataset):
-#     def __init__(self, data, labels, transform=None):
-#         self.data = data
-#         self.labels = labels
-#         self.transform = transform
-
-#     def __getitem__(self, index):
-#         if torch.is_tensor(index):
-#             index = index.tolist()
-#         jpeg_path = self.data[index]
-#         labels = self.labels[index]
-#         image = Image.open(jpeg_path).convert('RGB')
-    
-#         if self.transform is not None:
-#             image = self.transform(image)
-        
-#         # Assuming image shape is [3, 224, 224]
-#         image = self.apply_random_mask(image)
-#         labels = torch.as_tensor(int(labels), dtype=torch.int64)
-#         # print(image.shape)
-#         return image, labels
-
-#     def apply_random_mask(self, image):
-#         patch_size = 16
-#         num_patches = 14
-#         mask_ratio = 0.5
-
-#         image_np = image.numpy().transpose(1, 2, 0)  # Convert to numpy array and transpose to [224, 224, 3]
-#         height, width, channels = image_np.shape
-
-#         # Ensure image dimensions are compatible with patch size
-#         assert height == patch_size * num_patches and width == patch_size * num_patches, "Image size is not 224x224"
-
-#         total_patches = num_patches * num_patches
-#         num_masked_patches = int(total_patches * mask_ratio)
-#         all_patches = list(range(total_patches))
-#         masked_patches = random.sample(all_patches, num_masked_patches)
-
-#         # Reshape image into patches
-#         image_patches = image_np.reshape(num_patches, patch_size, num_patches, patch_size, channels)
-#         image_patches = image_patches.swapaxes(1, 2).reshape(-1, patch_size, patch_size, channels)
-
-#         # Mask selected patches
-#         for patch_index in masked_patches:
-#             image_patches[patch_index] = 0
-
-#         # Reshape patches back to original image shape
-#         image_np = image_patches.reshape(num_patches, num_patches, patch_size, patch_size, channels)
-#         image_np = image_np.swapaxes(1, 2).reshape(height, width, channels)
-
-#         image_np = image_np.transpose(2, 0, 1)  # Convert back to [3, 224, 224]
-#         return torch.tensor(image_np, dtype=torch.float32)
-
-#     def remove_negative_label(self):
-#         mask = self.labels > -1
-#         self.data = [self.data[i] for i in range(len(mask)) if mask[i]]
-#         self.labels = self.labels[mask]
-
-#     def remain_negative_label(self):
-#         mask = self.labels == -2
-#         self.data = [self.data[i] for i in range(len(mask)) if mask[i]]
-#         self.labels = self.labels[mask]
-
-#     def __len__(self):
-#         return len(self.data)
-##############
 import torch.nn as nn
 class MultiheadSelfAttention(nn.Module):
     def __init__(self, embed_dim, num_heads):
@@ -795,7 +664,7 @@ class AID_OSR(object):
         for k, v in name_dic.items():
             filedir_name[v[0]] = clean_names[t_for_clean_change]
             t_for_clean_change += 1
-        csv_name_dic = {"AID_p1":'p1',"AID_p2":'p2', "AID_p3":'p3' ,"AID_p4":'p4' ,"AID_p5":'p5', "AID_p6":'p6'}
+        csv_name_dic = {"AID_p1":'p1',"AID_p2":'p2', "AID_p3":'p3'}
         train_file_path = os.path.join(dataroot, 'AID', csv_name_dic[datasplit] + '_train.csv')
         test_file_path = os.path.join(dataroot, 'AID', csv_name_dic[datasplit] + '_test.csv')
         train_set = pd.read_csv(train_file_path)
@@ -824,7 +693,7 @@ class AID_OSR(object):
         all_test_set_names = pd.Series(all_test_set_names)
         test_set_open_vocabulary = test_set[all_test_set_names.isin(key_list_open_vocabulary)]   # key list
         
-        if datasplit in ["AID_p1","AID_p2","AID_p3","AID_p4","AID_p5","AID_p6"]:
+        if datasplit in ["AID_p1","AID_p2","AID_p3"]:
             test_set_open_vocabulary = test_set[test_set.iloc[:,0].str.split('/').str[1].isin(key_list_open_vocabulary)]
         
         

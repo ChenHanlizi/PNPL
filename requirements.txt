@@ -11,7 +11,6 @@ certifi==2024.6.2
 charset-normalizer==3.3.2
 click==8.1.7
 cmake==3.29.3
-conda-pack @ file:///home/conda/feedstock_root/build_artifacts/conda-pack_1719323969738/work
 contourpy==1.1.1
 cycler==0.12.1
 Cython==0.29.34
@@ -23,7 +22,6 @@ fsspec==2024.6.0
 ftfy==6.2.0
 fvcore==0.1.5.post20221221
 gdown==5.2.0
-geomloss==0.2.5
 gitdb==4.0.11
 GitPython==3.1.43
 google-auth==2.30.0

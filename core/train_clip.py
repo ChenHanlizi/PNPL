@@ -3,7 +3,6 @@ import torch.nn.functional as F
 import torch.nn as nn
 from torch.autograd import Variable
 from utils import AverageMeter, label_transform
-from geomloss import SamplesLoss
 import numpy as np
 import os
 import cv2
