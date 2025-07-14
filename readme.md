@@ -51,8 +51,8 @@ PNPL/
 | dataset | unknown class num | unknown classes                                              |
 | ------- | ----------------- | ------------------------------------------------------------ |
 | UCM_p1  | 3                 | agricultural, beach, storagetanks                            |
-| UCM_p1  | 5                 | agricultural, beach, chaparral, forest, river                |
-| UCM_p1  | 9                 | baseball diamond, buildings, dense residential, golfcourse, medium residential, mobile homepark, parkinglot, sparse residential, tenniscourt |
+| UCM_p2  | 5                 | agricultural, beach, chaparral, forest, river                |
+| UCM_p3  | 9                 | baseball diamond, buildings, dense residential, golfcourse, medium residential, mobile homepark, parkinglot, sparse residential, tenniscourt |
 | AID_p1  | 4                 | bareland, beach, desert, mountain                            |
 | AID_p2  | 9                 | airport, bridge, church, parking, port, railway station, resort, storagetanks, viaduct |
 | AID_p3  | 14                | airport, bareland, beach, bridge, church, desert, meadow, mountain, parking, port, railway station, resort, storage tanks, viaduct |
@@ -158,8 +158,8 @@ Dataset splits are as follows:
 | dataset | unknown class num | unknown classes                                              |
 | ------- | ----------------- | ------------------------------------------------------------ |
 | UCM_p1  | 3                 | agricultural, beach, storagetanks                            |
-| UCM_p1  | 5                 | agricultural, beach, chaparral, forest, river                |
-| UCM_p1  | 9                 | baseball diamond, buildings, dense residential, golfcourse, medium residential, mobile homepark, parkinglot, sparse residential, tenniscourt |
+| UCM_p2  | 5                 | agricultural, beach, chaparral, forest, river                |
+| UCM_p3  | 9                 | baseball diamond, buildings, dense residential, golfcourse, medium residential, mobile homepark, parkinglot, sparse residential, tenniscourt |
 | AID_p1  | 4                 | bareland, beach, desert, mountain                            |
 | AID_p2  | 9                 | airport, bridge, church, parking, port, railway station, resort, storagetanks, viaduct |
 | AID_p3  | 14                | airport, bareland, beach, bridge, church, desert, meadow, mountain, parking, port, railway station, resort, storage tanks, viaduct |
